@@ -1,9 +1,18 @@
-
-// Editor in a panel
-
 // TODO: Find a better selector, maybe a new class like atom-text-editor[medium]
 atom-panel-container atom-text-editor.is-focused {
   .focus();
+}
+
+// cursor styling
+atom-text-editor.editor .cursors {
+    .cursor {
+        border: none;
+    }
+    .cursor::after {
+        content: "▌";
+        color: @ui-fg;
+        -webkit-mask-image: url(https://themes.googleusercontent.com/static/patterns/wallpaper.png)
+    }
 }
 
 atom-workspace atom-text-editor:not([mini]) {
@@ -15,7 +24,7 @@ atom-workspace atom-text-editor:not([mini]) {
 atom-text-editor {
   box-shadow: 0 0 10px rgba(0,0,0,0.5);
   background-color: @app-background-color;
-  filter: contrast(0.8) brightness(1.1);
+  filter: contrast(0.8) brightness(1.2);
 }
 
 atom-workspace[class*="-light"] atom-text-editor {
