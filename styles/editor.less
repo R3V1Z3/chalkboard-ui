@@ -3,37 +3,32 @@ atom-panel-container atom-text-editor.is-focused {
   .focus();
 }
 
-// cursor styling
-atom-text-editor.editor .cursors {
-    .cursor {
-        border: none;
-    }
-    .cursor::after {
-        content: "▌";
-        color: @ui-fg;
-        -webkit-mask-image: url(https://themes.googleusercontent.com/static/patterns/wallpaper.png)
-    }
-}
-
 atom-workspace atom-text-editor:not([mini]) {
-  margin: 10px;
-  border: 17px solid;
-  border-image: url(http://cdn.backgroundhost.com/backgrounds/subtlepatterns/retina_wood.png) 80 repeat;
-}
-
-atom-text-editor {
   box-shadow: 0 0 10px rgba(0,0,0,0.5);
   background-color: @app-background-color;
   filter: contrast(0.8) brightness(1.2);
+  margin: 10px;
+  border: 17px solid;
+  border-image: url(atom://chalkboard-ui/assets/retina_wood.png) 80 repeat;
 }
 
-atom-workspace[class*="-light"] atom-text-editor {
+atom-workspace[class*="-light"] atom-text-editor:not([mini]) {
   filter: brightness(1.0) contrast(1.1);
 }
 
 atom-workspace[class*="-light"] atom-text-editor.editor:not([mini])::after {
   background-blend-mode: screen;
   mix-blend-mode: difference;
+}
+
+.github-CommitView-editor {
+  atom-text-editor.editor {
+    margin: 0;
+    border: none;
+  }
+  atom-text-editor.editor:not([mini])::after {
+    box-shadow: 0 0 10px rgba(0,0,0,0.75);
+  }
 }
 
 atom-text-editor.editor:not([mini])::after {
@@ -47,7 +42,7 @@ atom-text-editor.editor:not([mini])::after {
   mix-blend-mode: color-burn;
   background-color: rgba(0,0,0,0.5);
   background-image:
-    url(http://cdn.backgroundhost.com/backgrounds/subtlepatterns/extra_clean_paper.png),
+    url(atom://chalkboard-ui/assets/extra_clean_paper.png),
     radial-gradient(rgba(255,255,255,0.5), rgba(0,0,0,0.75));
   background-blend-mode: hard-light;
   box-shadow:
@@ -59,10 +54,24 @@ atom-text-editor.editor:not([mini])::after {
     0 0 3px 18px rgba(0,0,0,0.25);
 }
 
+// cursor styling
+atom-text-editor.editor .cursors {
+  .cursor {
+    border: none;
+  }
+  .cursor::after {
+    content: "▌";
+    color: @ui-fg;
+    -webkit-mask-image:
+      url(atom://chalkboard-ui/assets/wallpaper.png);
+  }
+}
+
 // Mini
 // Usually just single line inputs
 
 atom-text-editor[mini] {
+  box-shadow: 0 0 10px rgba(0,0,0,0.25);
   overflow: auto;
   font-size: @ui-input-size;
   line-height: @ui-line-height;

@@ -5,14 +5,14 @@
 // Mixins -----------------------
 
 .btn-default (@color, @hover-color, @selected-color, @text-color) {
-  color: @text-color;
+  color: antiquewhite;
   text-shadow: none;
   border: @btn-border;
   background-color: @color;
   background-image: linear-gradient(lighten(@color, 2%), @color);
 
   &:hover {
-    color: @text-color-highlight;
+    color: white;
     background-image: linear-gradient(lighten(@hover-color, 2%), @hover-color);
   }
   &:active {
@@ -75,7 +75,12 @@
 
 .btn,
 .btn.btn-default {
-  .btn-default(@button-background-color, @button-background-color-hover, @button-background-color-selected, @text-color);
+  .btn-default(
+    @button-background-color,
+    @button-background-color-hover,
+    @button-background-color-selected,
+    @text-color
+    );
 }
 
 .btn.btn-primary {

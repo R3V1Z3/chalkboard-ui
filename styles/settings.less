@@ -12,8 +12,6 @@
 @ms_1: @ui-size * 0.889;
 @ms_2: @ui-size * 0.790;
 
-
-
 .settings-view {
 
 	// Menu ------------------------------
@@ -25,6 +23,13 @@
 		border-width: 0 1px 0 0;
 		border-image: linear-gradient(@level-2-color 10px, @base-border-color 200px) 0 1 0 0 stretch;
 		background: transparent;
+
+		li:hover {
+        mix-blend-mode: difference;
+    }
+    li.active {
+        mix-blend-mode: difference;
+    }
 
 		.btn {
 			white-space: initial;
@@ -40,6 +45,10 @@
 	}
 	.nav {
 		& > li > a {
+			text-shadow:
+				0 0 1px white,
+				0 0 2px white,
+				0 0 3px black;
 			padding: @ui-padding/2 @ui-padding;
 			line-height: @ui-line-height;
 		}

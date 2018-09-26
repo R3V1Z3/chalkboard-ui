@@ -1,6 +1,11 @@
 @tree-view-height: @ui-line-height;
 
 .tree-view {
+  filter: sepia(40%);
+  text-shadow:
+    0 0 1px white,
+    0 0 2px white,
+    0 0 3px black;
   font-size: @ui-size;
   background: @tree-view-background-color;
 
@@ -17,6 +22,8 @@
   // Selected state
   .selected:before {
     background: @background-color-selected;
+    border-radius: 3px;
+    opacity: 0.25;
   }
 
   // Focus + selected state
@@ -24,17 +31,12 @@
     .selected.list-item > .name, // files
     .selected.list-nested-item > .list-item > .name, // folders
     .selected.list-nested-item > .header:before { // arrow icon
-      color: contrast(@button-background-color-selected);
+      //color: contrast(@button-background-color-selected);
     }
     .selected:before {
       background: @button-background-color-selected;
     }
   }
-}
-
-.theme-one-dark-ui .tree-view .project-root.project-root::before {
-  border-top: 1px solid transparent;
-  background-clip: padding-box;
 }
 
 .tree-view-resizer {
