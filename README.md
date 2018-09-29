@@ -24,7 +24,7 @@ FEATURES
 * Your computer is too fast, this helps slow it down.
 
 KNOWN BUGS
-* Textures don't scroll with contet like on real chalkboards
+* Textures don't scroll with content like on real chalkboards
 * Extensive use of CSS styles make it impossible to port to VS Code
 * Impervious to fingernails, no fun
 * Cockroaches
