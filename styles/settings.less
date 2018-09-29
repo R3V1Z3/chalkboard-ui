@@ -1,4 +1,3 @@
-
 // Settings
 
 // Modular Scale (1.125): http://www.modularscale.com/?1&em&1.125&web&table
@@ -21,7 +20,8 @@
 		min-width: @ui-size * 15;
 		max-width: @ui-size * 20;
 		border-width: 0 1px 0 0;
-		border-image: linear-gradient(@level-2-color 10px, @base-border-color 200px) 0 1 0 0 stretch;
+		border-image:
+			linear-gradient(@level-2-color 10px, @base-border-color 200px) 0 1 0 0 stretch;
 		background: transparent;
 
 		li:hover {
@@ -54,11 +54,10 @@
 		}
 	}
 
-
 	// Sections ------------------------------
 
 	& > .panels {
-		background-color: @level-2-color;
+		background-color: transparent;//@level-2-color;
 	}
 
 	.section-container {
@@ -78,7 +77,6 @@
 		margin-top: @ui-padding*2;
 	}
 
-
 	// Titles ------------------------------
 
 	.section .section-heading {
@@ -89,8 +87,6 @@
 	.section-heading.icon:before {
 		margin-right: @ui-padding-icon;
 	}
-
-
 
 	// Cards ------------------------------
 
@@ -103,7 +99,6 @@
 			}
 		}
 	}
-
 
 	// Components ------------------------------
 
